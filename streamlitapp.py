@@ -42,6 +42,7 @@ def main():
                 output = ("NON-DIABETIC - Congratulations. Your lifestyle is brilliant. Stay healthy, stay safe!")
 
             st.success(f'PREDICTION => {output}')
+            return render_template('index.html', prediction_text='PREDICTION => {}'.format(output))
         
         except Exception as e:
             st.error(f"An error occurred: {e}")
