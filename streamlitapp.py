@@ -15,17 +15,15 @@ def main():
 
     # Input fields
     st.header('Enter your details:')
-    # Assuming the form has fields for age, BMI, etc.
     age = st.number_input('Age', min_value=0, max_value=120, value=25)
     bmi = st.number_input('BMI', min_value=10.0, max_value=50.0, value=22.0)
     glucose = st.number_input('Glucose Level', min_value=0, max_value=300, value=100)
     insulin = st.number_input('Insulin Level', min_value=0, max_value=300, value=80)
-    
+
     # Add other input fields as necessary
-    
+
     if st.button('Predict'):
         try:
-            # Fetch data from Streamlit input
             int_features = [age, bmi, glucose, insulin]
             final_features = [np.array(int_features)]
 
