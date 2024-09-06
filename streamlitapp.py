@@ -1,4 +1,3 @@
-#import libraries
 import numpy as np
 from flask import Flask, request, render_template
 from sklearn.preprocessing import PolynomialFeatures
@@ -38,8 +37,8 @@ def predict():
         
         # Interpretation of the prediction result
         if prediction > 0.8:
-            output = ("DIABETIC - PLEASE TAKE CARE OF YOUR ROUTINE AND MAKE LIFESTYLE CHANGES."
-                      " Probability of being diabetic is HIGH!")
+            output = ("DIABETIC - PLEASE TAKE CARE OF YOUR ROUTINE AND MAKE LIFESTYLE CHANGES. "
+                      "Probability of being diabetic is HIGH!")
         else:
             output = ("NON-DIABETIC - Congratulations. Your lifestyle is brilliant. Stay healthy, stay safe!")
 
@@ -49,5 +48,5 @@ def predict():
         return f"An error occurred: {e}"
 
 if __name__ == "__main__":
-    # Use threaded=True to handle requests in a multithreaded environment
-    app.run(threaded=True)
+    # Use a different port to avoid conflict
+    app.run(port=5001, threaded=True)
